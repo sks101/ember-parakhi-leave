@@ -1,0 +1,27 @@
+{{outlet}}
+<div class="container">
+	<div class="row">
+	{{partial "partials/side"}}
+		<div class="col-sm-6">
+			
+			
+				<form {{action "formSubmit" on="submit"}} >
+						<div class="form-group">
+							<label for="">Name</label>
+							{{input type="text" value=leave.name class="form-control"}}	
+						</div>
+						<div class="form-group">
+							<label for="">Date</label>
+							{{input type="date" value=leave.date class="form-control"}}
+						</div>
+						<div class="form-group">
+							<label for="">Reasons</label>
+							{{textarea value=leave.reasons class="form-control"}}
+						</div>
+						<button class="btn btn-sm btn-primary">Save</button>
+							
+						
+				</form>
+		</div>
+	</div>
+</div>

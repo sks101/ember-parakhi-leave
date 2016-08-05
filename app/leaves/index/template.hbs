@@ -1,0 +1,42 @@
+{{outlet}}
+
+<div class="container">
+	<div class="row">
+		{{partial "partials/side"}}
+		<div class="col-sm-8">
+			
+			<h1>List of submission</h1>
+			<hr>
+			<table class="table" >
+				<thead>
+					<th>Name</th>
+					<th>Date</th>
+					<th>Reasons</th>
+					<th>Status</th>
+					<th colspan="4">Actions</th>
+
+				</thead>
+				<tbody>
+					{{#each model as |leave|}}
+									
+						<tr>
+							<td>{{leave.name}}</td>
+							<td>{{leave.date}}</td>
+							<td>{{leave.reasons}}</td>
+							<td>{{leave.status}}</td>
+							<td><button class="btn btn-sm btn-danger" {{action "delete" leave }}>Delete</button></td>
+							<td>{{#link-to  'leaves.edit' leave.id class='btn btn-sm btn-info'}}Edit{{/link-to}}</td>
+							<td><button class="btn btn-sm btn-primary" {{action "leaveStatus" "approve" leave}}>Approve</button></td>
+							<td><button class="btn btn-sm btn-primary"{{action "leaveStatus" "reject" leave}}>Reject</button></td>
+							
+						</tr>
+					{{/each}}
+
+				</tbody>
+			</table>
+			
+				
+			
+			</div>
+	</div>
+</div>	
